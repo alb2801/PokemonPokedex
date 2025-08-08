@@ -1,0 +1,13 @@
+.home-container {
+  background-color: #A9CBDF;
+  height: 100vh; /* Ocupa toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-image {
+  max-width: 50%;
+  margin-bottom: 10%;
+}
