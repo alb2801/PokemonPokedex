@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { PokemonApi } from '../../../service/pokemon-api';
 import { CommonModule } from '@angular/common';
 
@@ -7,17 +7,27 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './carrusel.html',
-  styleUrl: './carrusel.css'
+  styleUrl: './carrusel.css',
 })
-export class Carrusel {
+export class Carrusel implements AfterViewChecked {
+  @ViewChild('carouselWrapper') carouselWrapper!: ElementRef<HTMLDivElement>;
   pokemon: any[] = [];
+  anchoSetCalculado = false;
 
   constructor(private pokemonApi: PokemonApi) {}
 
   ngOnInit() {
-    this.pokemonApi.getPokemons(6).subscribe((data) => {
-      // duplicamos la lista para que el carrusel sea infinito visualmente
-      this.pokemon = [...data, ...data];
+    this.pokemonApi.getPokemons(151).subscribe((data) => {
+      this.pokemon = [...data];
     });
+  }
+
+  ngAfterViewChecked() {
+    if (!this.anchoSetCalculado && this.carouselWrapper) {
+      const wrapperEl = this.carouselWrapper.nativeElement;
+      const setWidth = wrapperEl.scrollWidth / 2;
+      document.documentElement.style.setProperty('--set-width', `${setWidth}px`);
+      this.anchoSetCalculado = true;
+    }
   }
 }

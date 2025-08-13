@@ -1,13 +1,18 @@
+
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
 .carousel-container {
   display: flex;
-  animation: scroll 30s linear infinite;
   gap: 1rem;
+  animation: scroll 250s linear infinite;
 }
 
 .carousel-item {
   flex: 0 0 auto;
   text-align: center;
-  min-width: 10%;
 }
 
 .carousel-item img {
@@ -16,17 +21,15 @@
   border-radius: 8px;
 }
 
-/* Animación automática */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-1 * var(--set-width)));
   }
 }
 
-/* Evitar que se rompa en pantallas pequeñas */
 .carousel-container:hover {
-  animation-play-state: paused; /* Pausa al pasar el mouse */
+  animation-play-state: paused;
 }

@@ -10,3 +10,10 @@
 .home-image {
   max-width: 50%;
 }
+
+app-carrusel {
+  display: block; 
+  width: -webkit-fill-available; 
+  width: -moz-available;         
+  width: stretch;                
+}

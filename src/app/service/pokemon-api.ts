@@ -7,9 +7,10 @@ import { map, Observable } from 'rxjs';
 })
 export class PokemonApi {
   private http = inject(HttpClient);
+  private baseUrl = 'https://pokeapi.co/api/v2/pokemon';
 
   getPokemons(limit: number = 5): Observable<any[]> {
-    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`)
+    return this.http.get<any>(`${this.baseUrl}?limit=${limit}`)
       .pipe(
         map(res => res.results.map((pokemon: any, index: number) => {
           return {
@@ -18,5 +19,9 @@ export class PokemonApi {
           };
         }))
       );
+  }
+  
+  getPokemonByName(name: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${name.toLowerCase()}`);
   }
 }
