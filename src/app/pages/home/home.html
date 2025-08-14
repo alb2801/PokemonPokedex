@@ -1,4 +1,19 @@
 <body class="home-container">
-    <img src="pokemon-logo-black-transparent.png" alt="Logo" class="responsive-img home-image">
-    <app-carrusel></app-carrusel>
+  <img
+    src="pokemon-logo-black-transparent.png"
+    alt="Logo"
+    class="responsive-img home-image"
+  />
+  <app-carrusel></app-carrusel>
+  <div class="search-and-card">
+    <app-search (search)="onSearch($event)"></app-search>
+
+    @if (errorMessage) {
+    <div style="color: red; text-align: center">
+      {{ errorMessage }}
+    </div>
+    }
+
+    <app-info-pokemon [pokemon]="pokemon"></app-info-pokemon>
+  </div>
 </body>
