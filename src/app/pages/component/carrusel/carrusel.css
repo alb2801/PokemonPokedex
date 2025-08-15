@@ -1,0 +1,35 @@
+
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 250s linear infinite;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--set-width)));
+  }
+}
+
+.carousel-container:hover {
+  animation-play-state: paused;
+}

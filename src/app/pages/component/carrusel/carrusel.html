@@ -1,0 +1,17 @@
+@if (pokemon.length > 0) {
+<div #carouselWrapper class="carousel-wrapper">
+  <div class="carousel-container">
+    @for (p of pokemon; track $index) {
+    <div class="carousel-item">
+      <img [src]="p.image" [alt]="p.name" />
+      <h5>{{ p.name | titlecase }}</h5>
+    </div>
+    } @for (p of pokemon; track $index) {
+    <div class="carousel-item">
+      <img [src]="p.image" [alt]="p.name" />
+      <h5>{{ p.name | titlecase }}</h5>
+    </div>
+    }
+  </div>
+</div>
+}

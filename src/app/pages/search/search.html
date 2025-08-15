@@ -1,0 +1,8 @@
+<div style="max-width: 400px; margin: auto; text-align: center;">
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Name of Pokemon</mat-label>
+    <input matInput [(ngModel)]="searchName" (keyup.enter)="buscarPokemon()" placeholder="Ej: pikachu">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="buscarPokemon()">Search</button>
+</div>

@@ -1,0 +1,33 @@
+@if (pokemon) {
+  <mat-card class="pokemon-card">
+    <mat-card-header class="header">
+      <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+      <mat-card-subtitle>#{{ pokemon.id }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="pokemon-body">
+      <div class="pokemon-sprites">
+        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" />
+        <img [src]="pokemon.sprites.back_default" alt="{{ pokemon.name }} back" />
+        <img [src]="pokemon.sprites.front_shiny" alt="{{ pokemon.name }} shiny" />
+      </div>
+
+      <!-- Columna derecha: información -->
+      <mat-card-content class="pokemon-info">
+        <p><strong>Height:</strong> {{ pokemon.height / 10 }} m</p>
+        <p><strong>Weight:</strong> {{ pokemon.weight / 10 }} kg</p>
+        <p><strong>Types:</strong> {{ tipos }}</p>
+        <p><strong>Abilities:</strong> {{ habilidades }}</p>
+
+        <div class="pokemon-stats">
+          <p><strong>Base stats:</strong></p>
+          <ul>
+            @for (stat of pokemon.stats; track stat.stat.name) {
+              <li>{{ stat.stat.name | titlecase }}: {{ stat.base_stat }}</li>
+            }
+          </ul>
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+}

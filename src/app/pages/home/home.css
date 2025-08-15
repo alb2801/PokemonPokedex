@@ -1,0 +1,33 @@
+.home-container {
+  background-color: #A9CBDF;
+  min-height: 100vh; /* asegura cubrir pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.home-image {
+  max-width: 50%;
+  height: auto;
+}
+
+app-carrusel {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de buscador + card */
+.search-and-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* app-info-pokemon{
+  width: -webkit-fill-available;
+} */
