@@ -27,3 +27,7 @@ app-carrusel {
   align-items: center;
   width: 100%;
 }
+
+/* app-info-pokemon{
+  width: -webkit-fill-available;
+} */
