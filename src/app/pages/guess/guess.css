@@ -1,0 +1,39 @@
+.guess-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.pokemon-image {
+  margin: 20px 0;
+
+  img {
+    max-width: 200px;
+    filter: drop-shadow(2px 4px 6px #000);
+    transition: filter 0.3s ease-in-out;
+
+    &.silhouette {
+      filter: brightness(0) contrast(1.2);
+    }
+  }
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+}

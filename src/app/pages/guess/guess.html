@@ -1,0 +1,29 @@
+<div class="guess-container">
+  <h2>Guess the Pokémon!</h2>
+  <p>Score: {{ score }}</p>
+
+  <div class="pokemon-image">
+    <img
+      [src]="pokemon?.image"
+      [class.silhouette]="!revealed"
+      alt="Guess the Pokémon"
+    />
+  </div>
+
+  @if (!revealed) {
+    <div class="input-area">
+      <input
+        [formControl]="guessControl"
+        placeholder="Enter Pokemon name"
+        (keyup.enter)="checkGuess()"
+      />
+      <button (click)="checkGuess()">Guess</button>
+    </div>
+  }
+
+  <p class="message">{{ message }}</p>
+
+  @if (revealed) {
+    <button (click)="nextPokemon()">Next Pokémon</button>
+  }
+</div>

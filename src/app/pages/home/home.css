@@ -28,6 +28,19 @@ app-carrusel {
   width: 100%;
 }
 
-/* app-info-pokemon{
-  width: -webkit-fill-available;
-} */
+.btn-guess {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ffcb05;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #2a75bb;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f2b807;
+    transform: scale(1.05);
+  }
+}
