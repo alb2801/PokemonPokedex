@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { PokemonApi } from '../../service/pokemon-api';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-guess',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButtonModule],
   templateUrl: './guess.html',
   styleUrl: './guess.css',
 })
@@ -26,7 +27,7 @@ export class Guess {
     this.message = '';
     this.guessControl.setValue('');
 
-    const randomId = Math.floor(Math.random() * 151) + 1;
+    const randomId = Math.floor(Math.random() * 1000) + 1;
     this.pokemonApi.getPokemonByName(randomId.toString()).subscribe((data) => {
       this.pokemon = {
         name: data.name,

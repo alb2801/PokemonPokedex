@@ -14,16 +14,17 @@
     <div class="input-area">
       <input
         [formControl]="guessControl"
-        placeholder="Enter Pokemon name"
+        placeholder="Enter pokemon name"
         (keyup.enter)="checkGuess()"
+        id="input-guess"
       />
-      <button (click)="checkGuess()">Guess</button>
+      <button mat-raised-button (click)="checkGuess()">Guess</button>
     </div>
   }
 
   <p class="message">{{ message }}</p>
 
   @if (revealed) {
-    <button (click)="nextPokemon()">Next Pokémon</button>
+    <button mat-raised-button color="primary" (click)="nextPokemon()">Next Pokémon</button>
   }
 </div>

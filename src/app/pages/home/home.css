@@ -31,16 +31,20 @@ app-carrusel {
 .btn-guess {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #ffcb05;
+  background-color: #cd0000;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #2a75bb;
+  color: #ffffff;
   font-weight: bold;
   transition: transform 0.2s ease, background-color 0.3s ease;
 
   &:hover {
-    background-color: #f2b807;
+    background-color: #cd0000;
     transform: scale(1.05);
   }
+}
+
+.guess-container{
+  margin: 2% 2% 2% 2%;
 }

@@ -20,11 +20,14 @@
 .input-area {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 
   input {
     padding: 8px;
     font-size: 16px;
+    border-bottom: 1px solid #26a69a;
+    text-align: center;
   }
 
   button {
@@ -36,4 +39,9 @@
 .message {
   font-size: 18px;
   font-weight: bold;
+}
+
+ input::placeholder {
+  color: rgb(252, 252, 252); 
+  font-style: italic;
 }

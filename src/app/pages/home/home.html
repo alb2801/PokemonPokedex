@@ -17,13 +17,12 @@
     <app-info-pokemon [pokemon]="pokemon"></app-info-pokemon>
   </div>
 
-  <div style="text-align: center; margin-top: 20px">
+  <div class="guess-container">
     <button (click)="showGuess = !showGuess" class="btn-guess">
-      🎯 Guess the Pokémon
+     Guess the Pokémon
     </button>
   </div>
 
-  <!-- Renderizamos el componente Guess si showGuess es true -->
   @if (showGuess) {
   <app-guess></app-guess>
   }
