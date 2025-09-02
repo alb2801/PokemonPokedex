@@ -7,7 +7,8 @@
   margin: 20px 0;
 
   img {
-    max-width: 200px;
+    width: 25%;      
+    image-rendering: pixelated; 
     filter: drop-shadow(2px 4px 6px #000);
     transition: filter 0.3s ease-in-out;
 
@@ -16,6 +17,7 @@
     }
   }
 }
+
 
 .input-area {
   display: flex;

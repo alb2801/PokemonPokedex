@@ -27,11 +27,14 @@ export class Guess {
     this.message = '';
     this.guessControl.setValue('');
 
-    const randomId = Math.floor(Math.random() * 1000) + 1;
+    const randomId = Math.floor(Math.random() * 649) + 1;
     this.pokemonApi.getPokemonByName(randomId.toString()).subscribe((data) => {
       this.pokemon = {
         name: data.name,
-        image: data.sprites.other['official-artwork'].front_default,
+        image:
+          data.sprites.versions['generation-v']['black-white'].animated
+            .front_default ||
+          data.sprites.other['official-artwork'].front_default,
       };
     });
   }
