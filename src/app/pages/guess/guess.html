@@ -11,20 +11,48 @@
   </div>
 
   @if (!revealed) {
-    <div class="input-area">
-      <input
-        [formControl]="guessControl"
-        placeholder="Enter pokemon name"
-        (keyup.enter)="checkGuess()"
-        id="input-guess"
-      />
-      <button mat-raised-button (click)="checkGuess()">Guess</button>
-    </div>
+  <div class="input-area">
+    <input
+      [formControl]="guessControl"
+      placeholder="Enter pokemon name"
+      (keyup.enter)="checkGuess()"
+      id="input-guess"
+    />
+    <button
+      mat-raised-button
+      class="help-button"
+      (click)="useHelp()"
+      [disabled]="helpUsed >= 2"
+    >
+      Help
+    </button>
+    <button mat-raised-button (click)="checkGuess()">Guess</button>
+  </div>
   }
 
-  <p class="message">{{ message }}</p>
+  <ul class="hints-list">
+    @for (hint of hints; track $index) {
+    <li class="message">
+      @if (hint.kind === 'types') {
+      <div class="type-icons">
+        @for (t of hint.value; track $index) {
+        <img
+          [src]="typeIcons[t.type.name]"
+          [alt]="t.type.name"
+          class="type-icon"
+        />
+        }
+      </div>
+      } @else {
+      {{ hint.value }}
+      }
+    </li>
+    }
+  </ul>
 
   @if (revealed) {
-    <button mat-raised-button color="primary" (click)="nextPokemon()">Next Pokémon</button>
+  <button mat-raised-button color="primary" (click)="nextPokemon()">
+    Next Pokémon
+  </button>
   }
 </div>
