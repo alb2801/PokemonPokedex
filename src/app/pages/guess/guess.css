@@ -37,9 +37,18 @@
   }
 }
 
+.messageHints {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1%;
+}
+
 .message {
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
+  margin: 1% 1% 1% -6%;
 }
 
 input::placeholder {

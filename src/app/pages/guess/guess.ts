@@ -63,8 +63,8 @@ export class Guess {
         name: data.name,
         image:
           data.sprites.versions['generation-v']['black-white'].animated
-            .front_default ||
-          data.sprites.other['official-artwork'].front_default,
+            .front_shiny ||
+          data.sprites.other['official-artwork'].front_shiny,
         types: data.types,
       };
       this.helpUsed = 0;
@@ -77,6 +77,7 @@ export class Guess {
       this.message = `Correct! It's ${this.pokemon.name.toUpperCase()}!`;
       this.score++;
       this.revealed = true;
+      this.hints = [];
     } else {
       this.message = `Nope! Try again.`;
     }
@@ -89,13 +90,16 @@ export class Guess {
   useHelp() {
     if (this.helpUsed === 0) {
       this.hints.push({ kind: 'types', value: this.pokemon.types });
+      this.message = '';
     } else if (this.helpUsed === 1) {
       this.hints.push({
         kind: 'text',
         value: `Hint: The name has ${this.pokemon.name.length} letters.`,
       });
+      this.message = '';
     } else {
       this.hints.push({ kind: 'text', value: 'No more hints available!' });
+      this.message = '';
     }
     this.helpUsed++;
   }

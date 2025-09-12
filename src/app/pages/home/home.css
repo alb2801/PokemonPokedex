@@ -1,6 +1,6 @@
 .home-container {
-  background-color: #A9CBDF;
-  min-height: 100vh; /* asegura cubrir pantalla */
+  background-color: #a9cbdf;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,6 @@ app-carrusel {
   margin-bottom: 20px;
 }
 
-/* Contenedor de buscador + card */
 .search-and-card {
   display: flex;
   flex-direction: column;
@@ -45,6 +44,14 @@ app-carrusel {
   }
 }
 
-.guess-container{
+.guess-container {
   margin: 2% 2% 2% 2%;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 450;
+  color: red;
+  text-align: center;
+  margin-top: 2%;
 }

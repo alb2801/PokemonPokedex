@@ -22,7 +22,7 @@
       mat-raised-button
       class="help-button"
       (click)="useHelp()"
-      [disabled]="helpUsed >= 2"
+      [disabled]="helpUsed >= 3"
     >
       Help
     </button>
@@ -30,9 +30,16 @@
   </div>
   }
 
+  @if (revealed === false) {
+    <p class="message" style="color: red;">{{ message }}</p>
+  }
+  @else {
+    <p class="message">{{ message }}</p>
+  }
+
   <ul class="hints-list">
     @for (hint of hints; track $index) {
-    <li class="message">
+    <li class="messageHints">
       @if (hint.kind === 'types') {
       <div class="type-icons">
         @for (t of hint.value; track $index) {
