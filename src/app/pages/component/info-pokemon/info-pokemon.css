@@ -1,6 +1,7 @@
 .pokemon-card {
   margin: 2% auto;
   max-width: 600px;
+  filter: drop-shadow(2px 4px 6px #000);
 }
 
 .header {

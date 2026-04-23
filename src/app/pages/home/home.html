@@ -9,11 +9,21 @@
     <app-search (search)="onSearch($event)"></app-search>
 
     @if (errorMessage) {
-    <div style="color: red; text-align: center">
+    <div class="message">
       {{ errorMessage }}
     </div>
     }
 
     <app-info-pokemon [pokemon]="pokemon"></app-info-pokemon>
   </div>
+
+  <div class="guess-container">
+    <button (click)="showGuess = !showGuess" class="btn-guess">
+     Guess the Pokémon
+    </button>
+  </div>
+
+  @if (showGuess) {
+  <app-guess></app-guess>
+  }
 </body>

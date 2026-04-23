@@ -1,0 +1,90 @@
+.guess-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.pokemon-image {
+  margin: 20px 0;
+
+  img {
+    width: 25%;
+    image-rendering: pixelated;
+    filter: drop-shadow(2px 4px 6px #000);
+    transition: filter 0.3s ease-in-out;
+
+    &.silhouette {
+      filter: brightness(0) contrast(1.2);
+    }
+  }
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #26a69a;
+    text-align: center;
+  }
+
+  button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+}
+
+.messageHints {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1%;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 1% 1% 1% -6%;
+}
+
+input::placeholder {
+  color: rgb(252, 252, 252);
+  font-style: italic;
+}
+
+.help-button {
+  background-color: #59957e !important;
+  color: white !important;
+  border-radius: 20px;
+  padding: 8px 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: #345749 !important;
+}
+
+.type-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.type-icon {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.hints-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 1% 1% 1% -6%;
+}
